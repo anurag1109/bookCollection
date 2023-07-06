@@ -8,6 +8,9 @@ app.use(cors());
 const { connection } = require("./Configs/db");
 
 const router = require("./routes/bookRoutes");
+app.use("/", (req, res) => {
+  res.send("Welcome to home page");
+});
 
 app.use("/books", router);
 app.listen(process.env.port, async (req, res) => {
